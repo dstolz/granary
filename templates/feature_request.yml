@@ -1,0 +1,34 @@
+name: Feature request
+description: Reference issue form for a feature request.
+title: "[Feature] "
+labels: ["enhancement"]
+
+# Reference template. Copy this into your own repository as
+# .github/ISSUE_TEMPLATE/feature_request.yml and edit it freely.
+#
+# A feature request needs no log, so nothing here is filled from granary. The
+# `version` field is the one thing worth prefilling by hand -- a request may
+# already be satisfied further along the default branch:
+#
+#   url = [T.NewIssueURL '?template=feature_request.yml&version=' encoded]
+
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What would you like it to do?
+      description: And where the current behaviour gets in the way.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you do instead today
+      description: Workarounds, and why they are not enough.
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Autofilled when opened from the application.

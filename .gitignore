@@ -1,0 +1,9 @@
+# Log output
+.error_logs/
+*.log
+
+# MATLAB
+*.asv
+*.m~
+slprj/
+codegen/

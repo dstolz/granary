@@ -1,0 +1,48 @@
+name: Bug report
+description: Reference issue form for granary.report.
+title: "[Bug] "
+labels: ["bug"]
+
+# Reference template. Copy this into your own repository as
+# .github/ISSUE_TEMPLATE/bug_report.yml and edit it freely.
+#
+# The CONTRACT with granary.report.url is the field `id`s below: GitHub
+# prefills an issue form from query parameters named for them. `environment`
+# and `logs` are the two granary fills in, and they match the defaults on
+# granary.report.Tracker -- rename them here and you must say so there:
+#
+#   granary.report.Tracker(url, Template='bug_report.yml', ...
+#                          EnvironmentField='env', LogsField='tail')
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The quickest route is your application's own "Report an Issue"
+        command, which fills in the Environment and Log sections below.
+
+        Please read the log excerpt before submitting: a log can contain file
+        paths, user names, and data you may not want published. Edit or delete
+        anything that should not be public.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Autofilled. Version, host, and session details.
+      render: text
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log excerpt
+      description: Autofilled. The tail of the log at the time of the failure.
+      render: text
